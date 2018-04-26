@@ -18,8 +18,6 @@ Install Flask:
 
 `pip install flask`
 
-Will install Flask and create the `Pipfile.lock`.
-
 The application will exist in a package. In Python, a sub-directory that includes a __init__.py file is considered a package, and can be imported.
 
 Create app folder:
@@ -50,7 +48,7 @@ Initiate Git in the app folder:
 
 Install gunicorn:
 
-`sudo pipenv install gunicorn`
+`pip install gunicorn`
 
 Create Procfile under the root:
 
