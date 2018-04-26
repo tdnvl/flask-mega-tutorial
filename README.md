@@ -6,15 +6,17 @@ This repo covers Miguel Grinberg's _Flask Mega-Tutorial_. I am adding my persona
 
 Create directory, move to directory.
 
-Start Pipenv shell:
+Create the virtual environment:
 
-`sudo pipenv shell`
+`python3 -m venv venv`
 
-Pipfile is then created.
+And activate it:
+
+`source venv/bin/activate`
 
 Install Flask:
 
-`sudo pipenv install flask`
+`pip install flask`
 
 Will install Flask and create the `Pipfile.lock`.
 
