@@ -38,40 +38,8 @@ Flask needs to be told how to import it, by setting the FLASK_APP environment va
 
 `export FLASK_APP=microblog.py`
 
-To start the app, execute `flask run`. Make sure the be in the virtual environment; start it with `pipenv shell`.
+To start the app, execute `flask run`. Make sure the be in the virtual environment; start it with `source venv/bin/activate`.
 
-## Push to Heroku
-
-Initiate Git in the app folder:
-
-`git init`
-
-Install gunicorn:
-
-`pip install gunicorn`
-
-Create Procfile under the root:
-
-`touch Procfile`
-
-The file will just contain:
-
-`web: gunicorn microblog:app`
-
-Add all files, initial commit, and push on Heroku:
-
-```
-git add .
-git commit -m "Initial commit."
-heroku create
-git push heroku master
-```
-
-Open the app:
-
-`heroku open`
-
-Celebrate: 🎉
 
 ## Templates
 
