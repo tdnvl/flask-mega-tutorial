@@ -41,7 +41,7 @@ Flask needs to be told how to import it, by setting the FLASK_APP environment va
 To start the app, execute `flask run`. Make sure the be in the virtual environment; start it with `source venv/bin/activate`.
 
 
-## Templates
+## Chapter2: Templates
 
 Templates are stored under `app/templates/` as html files. Templates are returned by functions in `routes.py`.
 
@@ -85,9 +85,46 @@ posts = [
 
 ### Template inheritance
 
+I'm very familiar with this by now. I liked the title logic in the `<head>`:
 
+```
+<head>
+    {% if title %}
+    <title>{{ title }} - Microblog</title>
+    {% else %}
+    <title>Welcome to Microblog</title>
+    {% endif %}
+</head>
+```
 
+## Chapter 3: Web forms
 
+The tutorial uses "the Flask-WTF extension, which is a thin wrapper around the WTForms package that nicely integrates it with Flask."
 
+In the venv:
+
+`pip install flask-wtf`
+
+### Configuration
+
+Miguel Grinberg uses a class to store configuration variables. A bit unusual (?) but very extensible. The class lives in `config.py` in the top-level directory. The configuration settings are defined as class variables inside the `Config` class.
+
+We need to tell Flask to read the config and apply it; in `__init__.py`:
+
+`from config import Config`
+
+The lowercase “config” is the name of the Python module config.py, the one with the uppercase “C” is the actual class.
+
+Still in `__init__.py`:
+
+`app.config.from_object(Config)`
+
+### User login form
+
+> The Flask-WTF extension uses Python classes to represent web forms. A form class simply defines the fields of the form as class variables.
+
+The `forms.py` module will store the web form(s) classes.
+
+We import `wtf_flask` and the type fields and validators. More info on [the field types that WTForms offers.](http://wtforms.simplecodes.com/docs/0.6/fields.html#basic-fields0)
 
 
