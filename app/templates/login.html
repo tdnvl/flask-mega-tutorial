@@ -3,10 +3,10 @@
 {% block content %}
 	<h1>Sing in</h1>
 	<form action="" method="POST">
-		{{ form.hidden_tag }}
+		{{ form.hidden_tag() }}
 		<p>
 			{{ form.username.label }}<br>
-			{{ form.usename(size=32) }}
+			{{ form.username(size=32) }}
 		</p>
 		<p>
 			{{ form.password.label }}<br>

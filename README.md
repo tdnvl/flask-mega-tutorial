@@ -127,4 +127,21 @@ The `forms.py` module will store the web form(s) classes.
 
 We import `wtf_flask` and the type fields and validators. More info on [the field types that WTForms offers.](http://wtforms.simplecodes.com/docs/0.6/fields.html#basic-fields0)
 
+The form module is created, Flask-WTF is imported, the form class is created and each field is declared as a class variable. Cool. Now we need to build a new template.
+
+>The form.hidden_tag() template argument generates a hidden field that includes a token that is used to protect the form against CSRF attacks. All you need to do to have the form protected is include this hidden field and have the SECRET_KEY variable defined in the Flask configuration. If you take care of these two things, Flask-WTF does the rest for you.
+
+The `form.submit()` syntax is convenient when one wants to attach CSS classes or IDs to form fiels:
+
+`{{ form.submit(class="btn-primary") }}`
+
+The last steps are to:
++ import the form to `routes.py`: `from app.forms import LoginForm`
++ add an `@app.route` to `routes.py`
+
+>The form=form syntax may look odd, but is simply passing the form object created in the line above (and shown on the right side) to the template with the name form (shown on the left).
+
+
+
+
 
