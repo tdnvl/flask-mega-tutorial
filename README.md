@@ -141,6 +141,11 @@ The last steps are to:
 
 >The form=form syntax may look odd, but is simply passing the form object created in the line above (and shown on the right side) to the template with the name form (shown on the left).
 
+Right now we're going to rely on flashed messages to show the form interaction:
+
+>When you call the flash() function, Flask stores the message, but flashed messages will not magically appear in web pages. The templates of the application need to render these flashed messages in a way that works for the site layout.
+
+
 
 
 
