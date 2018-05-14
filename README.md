@@ -143,7 +143,20 @@ The last steps are to:
 
 Right now we're going to rely on flashed messages to show the form interaction:
 
->When you call the flash() function, Flask stores the message, but flashed messages will not magically appear in web pages. The templates of the application need to render these flashed messages in a way that works for the site layout.
+>When you call the `flash()` function, Flask stores the message, but flashed messages will not magically appear in web pages. The templates of the application need to render these flashed messages in a way that works for the site layout.
+
+>An interesting property of these flashed messages is that once they are requested once through the `get_flashed_messages` function they are removed from the message list, so they appear only once after the `flash()`` function is called.
+
+>The form.validate_on_submit() method does all the form processing work.
+
+#### Improving form validation
+
+>As a general rule, any fields that have validators attached will have any error messages that result from validation added under `form.<field_name>.errors`. This is going to be a list, because fields can have multiple validators attached and more than one may be providing error messages to display to the user.
+
+Lalith Polepeddi implements form validation in Flask a bit differently. The `{% for errors in form.<field_name>.errors %}` is nested in an `{% if form.<field_name>.errors %}` which feels a bit cleaner to me. Polepeddi also relies on an `error-message` CSS class instead of inlining some style.
+
+Stopped at 3.8.
+
 
 
 
