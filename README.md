@@ -41,7 +41,7 @@ Flask needs to be told how to import it, by setting the FLASK_APP environment va
 To start the app, execute `flask run`. Make sure the be in the virtual environment; start it with `source venv/bin/activate`.
 
 
-## Chapter2: Templates
+## Chapter 2: Templates
 
 Templates are stored under `app/templates/` as html files. Templates are returned by functions in `routes.py`.
 
@@ -155,7 +155,34 @@ Right now we're going to rely on flashed messages to show the form interaction:
 
 Lalith Polepeddi implements form validation in Flask a bit differently. The `{% for errors in form.<field_name>.errors %}` is nested in an `{% if form.<field_name>.errors %}` which feels a bit cleaner to me. Polepeddi also relies on an `error-message` CSS class instead of inlining some style.
 
-Stopped at 3.8.
+#### Generating links
+
+Instead of relying on actual links in templates and source files, it is better to rely on Flask's `url_for()` function. So instead of:
+
+```
+<a href="/index">Home</a>
+<a href="/login">Login</a>
+```
+
+we'll write:
+
+```
+<a href="{{ url_for('index') }}">Home</a>
+<a href="{{ url_for('login') }}">Login</a>
+```
+
+## Chapter 4: Database
+
+We'll be using Flask-SQLAlchemy and Flask-Migrate (built by Grinberg himself.)
+
+```
+(venv) $ pip install flask-sqlalchemy
+(venv) $ pip install flask-migrate
+```
+
+We'll be using SQLite during development. Thanks to Flask-Migrate + Flask-Alchemy, we should be able to migrate to MySQL or PostgreSQL without having to change the app.
+
+
 
 
 
