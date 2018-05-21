@@ -220,8 +220,9 @@ We've made changes to the schema, so let's trigger a new update to the database 
 
 `flask db migrate -m "posts table"`
 
+### Shell context
 
-
+4.10
 
 
 
