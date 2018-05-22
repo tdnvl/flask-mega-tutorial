@@ -235,6 +235,10 @@ We use the password hashing implemented in [Werkzeug](http://werkzeug.pocoo.org/
 
 We compare a password hash previously generated and the one generated on the fly when the user enters their password. The function returns a boolean.
 
+We'll be using [Flask-Login](https://flask-login.readthedocs.io/en/latest/).
+
+`pip install flask-login`
+
 
 
 
