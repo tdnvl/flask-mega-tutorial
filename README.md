@@ -212,7 +212,7 @@ I like what the author is doing with the `timestamp`, calling the `DateTime` mod
 
 `default=datetime.utcnow`
 
-Intersing note about timestamps:
+Interesting note about timestamps:
 
 > In general, you will want to work with UTC dates and times in a server application. This ensures that you are using uniform timestamps regardless of where the users are located. These timestamps will be converted to the user’s local time when they are displayed.
 
@@ -222,7 +222,21 @@ We've made changes to the schema, so let's trigger a new update to the database 
 
 ### Shell context
 
-4.10
+> The `shell` command is the second “core” command implemented by Flask, after `run`.
+
+More about [the Flask CLI.](http://flask.pocoo.org/docs/1.0/cli/#cli)
+
+
+## Chapter 5: User logins
+
+### Password hashing
+
+We use the password hashing implemented in [Werkzeug](http://werkzeug.pocoo.org/) (part of Flask installation).
+
+We compare a password hash previously generated and the one generated on the fly when the user enters their password. The function returns a boolean.
+
+
+
 
 
 
