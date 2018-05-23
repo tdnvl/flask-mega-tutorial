@@ -229,7 +229,7 @@ More about [the Flask CLI.](http://flask.pocoo.org/docs/1.0/cli/#cli)
 
 ## Chapter 5: User logins
 
-### Password hashing
+[### Password hashing](#password-hashing)
 
 We use the password hashing implemented in [Werkzeug](http://werkzeug.pocoo.org/) (part of Flask installation).
 
@@ -239,6 +239,31 @@ We'll be using [Flask-Login](https://flask-login.readthedocs.io/en/latest/).
 
 `pip install flask-login`
 
+[### Logging users in](#logging-users-in)
+
+We're querying the database to see if the user exists. I like the use of `first()`, here:
+
+> The `first()` method is another commonly used way to execute a query, when you only need to have one result.
+
+When the username and password are both correct:
+
+> I call the `login_user()` function, which comes from Flask-Login. This function will register the user as logged in, so that means that any future pages the user navigates to will have the `current_user` variable set to that user.
+
+[### Requiring users to log in](#requiring-users-log-in)
+
+Flask-Login offers a clever way to require users to log in while keeping in mind _where_ users were trying to log in (through a query string argument, `URL /login?next=/index` for example). Just add the `@login_required` decorator to a view function under the `@app.route` decorator(s):
+
+```
+from flask_login import login_required
+
+@app.route('/')
+@app.route('/index')
+@login_required
+def index():
+    # ...
+```
+
+Stopped at listing 5.9.
 
 
 
