@@ -263,7 +263,13 @@ def index():
     # ...
 ```
 
-Stopped at listing 5.12.
+### Users registration
+
+The registration form uses form validators. The password is required twice and on the second field, the author uses `EqualTo()` to make sure that the same password was entered twice.
+
+The author added some custom validators (`validate_<field_name>`) to make sure that the `username` and `email` were unique in the database.
+
+
 
 
 
