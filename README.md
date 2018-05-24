@@ -271,9 +271,29 @@ The author added some custom validators (`validate_<field_name>`) to make sure t
 
 # Chapter 6: Profile Page and Avatars
 
-Stopped at listing 6.1. Document what the author did with`first_or_404()`
+## User profile page
 
+`@app.route('/user/<username>')` is going to be for logged in users. We are passing a dynamic component in the URL: `<username>`.
 
+The function `user()` queries the database to retrive the user found in the URL. Instead of using `.first()` to return the first result, the author uses `first_or_404()` which returns the first result if there's one or a 404 if there isn't.
+
+## Gravatar
+
+> The Gravatar service is very simple to use. To request an image for a given user, a URL with the format https://www.gravatar.com/avatar/<hash>, where <hash> is the MD5 hash of the user’s email address.
+
+We'll handle the md5 hashed by importing:
+
+`from hashlib import md5`
+
+in `models.py`.
+
+> [...] because the MD5 support in Python works on bytes and not on strings, I encode the string as bytes before passing it on to the hash function.
+
+So:
+
+`digest = md5(self.email.lower().encode('utf-8')).hexdigest()`
+
+## Using Jinja2 Sub-Templates
 
 
 
