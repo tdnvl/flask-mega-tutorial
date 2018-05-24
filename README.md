@@ -269,6 +269,9 @@ The registration form uses form validators. The password is required twice and o
 
 The author added some custom validators (`validate_<field_name>`) to make sure that the `username` and `email` were unique in the database.
 
+# Chapter 6: Profile Page and Avatars
+
+Stopped at listing 6.1. Document what the author did with`first_or_404()`
 
 
 
