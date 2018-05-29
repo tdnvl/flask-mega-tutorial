@@ -275,7 +275,7 @@ The author added some custom validators (`validate_<field_name>`) to make sure t
 
 `@app.route('/user/<username>')` is going to be for logged in users. We are passing a dynamic component in the URL: `<username>`.
 
-The function `user()` queries the database to retrive the user found in the URL. Instead of using `.first()` to return the first result, the author uses `first_or_404()` which returns the first result if there's one or a 404 if there isn't.
+The function `user()` queries the database to retrieve the user found in the URL. Instead of using `.first()` to return the first result, the author uses `first_or_404()` which returns the first result if there's one or a 404 if there isn't.
 
 ## Gravatar
 
@@ -294,6 +294,43 @@ So:
 `digest = md5(self.email.lower().encode('utf-8')).hexdigest()`
 
 ## Using Jinja2 Sub-Templates
+
+Sub-templates use a `_` prefix as a naming convention. They are, in a way, modules that one can invoke in a template.
+
+The author decided to turn posts in the `user.html` templates into a sub-template. It is called this way:
+
+```
+{% for post in posts %}
+    {% include '_post.html' %}
+{% endfor %}
+```
+
+### More interesting profiles
+
+The author decided to add two pieces of information on users profiles: an about me section and the last time seen.
+
+We add two fields in the `User` class in `models.py`: `about_me` and `last-seen`, but we also have to generate a database migration:
+
+`flask db migrate -m "new fields in user model"`
+
+Flask-Migrate will automagically see that two columns need to be added to the database. The output looks like:
+
+```
+INFO  [alembic.runtime.migration] Context impl SQLiteImpl.
+INFO  [alembic.runtime.migration] Will assume non-transactional DDL.
+INFO  [alembic.autogenerate.compare] Detected added column 'user.about_me'
+INFO  [alembic.autogenerate.compare] Detected added column 'user.last_seen'
+```
+
+Now to apply those changes, we must run:
+
+`flask db upgrade`
+
+Finally, we add these two fields to the user profile template:
+
+#### Recording the last visit time for a user
+
+
 
 
 
