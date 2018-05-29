@@ -330,6 +330,25 @@ Finally, we add these two fields to the user profile template:
 
 #### Recording the last visit time for a user
 
+This feature relies on a new decorator: `@before_request`. 
+
+>  This is extremely useful because now I can insert code that I want to execute before any view function in the application, and I can have it in a single place.
+
+If the user is authenticated, we pull the `datetime.utcnow()` time and commit it in the database under `last_seen`.
+
+### Profile editor
+
+We're adding a new form to let users enter some info about themselves that will be stored under `about_me`.
+
+We start by writing a class for the form. We're importing the new `TextAreaField` field from `wtforms`, as well as the `Lenth` validator. We then add a new template (`edit_profile.html`) and a view function in `routes.py`.
+
+Don't forget to import the form in `routes.py`!
+
+`from app.forms import LoginForm, RegistrationForm, EditProfileForm`
+
+
+
+
 
 
 
