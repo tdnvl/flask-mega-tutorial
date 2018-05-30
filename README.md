@@ -346,6 +346,33 @@ Don't forget to import the form in `routes.py`!
 
 `from app.forms import LoginForm, RegistrationForm, EditProfileForm`
 
+# Chapter 7: Error handling
+
+## Flask debug mode
+
+To turn the debugger mode on, close the application and type:
+
+`export FLASK_DEBUG=1`
+
+> Never run a Flask application in debug mode on a production server!
+
+>As an additional security measure, the debugger running in the browser starts locked, and on first use will ask for a PIN number, which you can see in the output of the `flask run` command.
+
+On top of a more verbose, in the browser messages, the Flask Debug mode turns on the _reloader_; it will automatically restart the application when a source file is modified. It's really convenient compared to restarting the app manually when debugging.
+
+## Custom error pages
+
+Let's add an `errors.py` module and declare custom error handlers using the `@errorhandler` decorator.
+
+For these error handlers to be registered with Flask, the new `app/errors.py` module needs to be imported after the application instance is created:
+
+`from app import routes, models, errors` in `__init__.py`
+
+## Sending errors by email
+
+This obviously requires some server, email, and password settings. I don't want to go through this and I'll just use the debugger for now.
+
+
 
 
 
