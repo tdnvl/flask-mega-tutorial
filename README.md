@@ -378,7 +378,9 @@ For this feature, the author relies on a RotatingFileHandler, a file-based log:
 
 > The RotatingFileHandler class is nice because it rotates the logs, ensuring that the log files do not grow too large when the application runs for a long time. In this case I’m limiting the size of the log file to 10KB, and I’m keeping the last ten log files as backup.
 
+# Chapter 8: Followers
 
+Stopped at Listing 8.1—to be added.
 
 
 
