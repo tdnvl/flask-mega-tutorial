@@ -372,7 +372,11 @@ For these error handlers to be registered with Flask, the new `app/errors.py` mo
 
 This obviously requires some server, email, and password settings. I don't want to go through this and I'll just use the debugger for now.
 
+## Logging to a file
 
+For this feature, the author relies on a RotatingFileHandler, a file-based log:
+
+> The RotatingFileHandler class is nice because it rotates the logs, ensuring that the log files do not grow too large when the application runs for a long time. In this case I’m limiting the size of the log file to 10KB, and I’m keeping the last ten log files as backup.
 
 
 
