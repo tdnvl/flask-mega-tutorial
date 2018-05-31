@@ -380,7 +380,9 @@ For this feature, the author relies on a RotatingFileHandler, a file-based log:
 
 # Chapter 8: Followers
 
-Stopped at Listing 8.1—to be added.
+# Chapter 9: Pagination
+
+
 
 
 
