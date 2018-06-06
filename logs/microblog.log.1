@@ -1,0 +1,110 @@
+2018-06-03 19:08:53,529 INFO: Microblog startup [in /Users/Thomas/Documents/flask-mega-tutorial/app/__init__.py:28]
+2018-06-03 21:33:14,852 INFO: Microblog startup [in /Users/Thomas/Documents/flask-mega-tutorial/app/__init__.py:28]
+2018-06-03 21:33:21,930 ERROR: Exception on / [GET] [in /Users/Thomas/Documents/flask-mega-tutorial/venv/lib/python3.6/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/Users/Thomas/Documents/flask-mega-tutorial/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Thomas/Documents/flask-mega-tutorial/venv/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Thomas/Documents/flask-mega-tutorial/venv/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Thomas/Documents/flask-mega-tutorial/venv/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/Users/Thomas/Documents/flask-mega-tutorial/venv/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Thomas/Documents/flask-mega-tutorial/venv/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Thomas/Documents/flask-mega-tutorial/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/Thomas/Documents/flask-mega-tutorial/app/routes.py", line 27, in index
+    posts = current_user.followed_posts().all()
+  File "/Users/Thomas/Documents/flask-mega-tutorial/app/models.py", line 46, in followed_posts
+    followed = Post.query.join(followers, (followers.c.followed_id == Post.user_id)).filter(followers.c.follower_id == self.id)
+NameError: name 'followers' is not defined
+2018-06-03 21:33:25,127 ERROR: Exception on /index [GET] [in /Users/Thomas/Documents/flask-mega-tutorial/venv/lib/python3.6/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/Users/Thomas/Documents/flask-mega-tutorial/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Thomas/Documents/flask-mega-tutorial/venv/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Thomas/Documents/flask-mega-tutorial/venv/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Thomas/Documents/flask-mega-tutorial/venv/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/Users/Thomas/Documents/flask-mega-tutorial/venv/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Thomas/Documents/flask-mega-tutorial/venv/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Thomas/Documents/flask-mega-tutorial/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/Thomas/Documents/flask-mega-tutorial/app/routes.py", line 27, in index
+    posts = current_user.followed_posts().all()
+  File "/Users/Thomas/Documents/flask-mega-tutorial/app/models.py", line 46, in followed_posts
+    followed = Post.query.join(followers, (followers.c.followed_id == Post.user_id)).filter(followers.c.follower_id == self.id)
+NameError: name 'followers' is not defined
+2018-06-03 21:35:53,265 INFO: Microblog startup [in /Users/Thomas/Documents/flask-mega-tutorial/app/__init__.py:28]
+2018-06-03 21:35:58,099 ERROR: Exception on /index [GET] [in /Users/Thomas/Documents/flask-mega-tutorial/venv/lib/python3.6/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/Users/Thomas/Documents/flask-mega-tutorial/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Thomas/Documents/flask-mega-tutorial/venv/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Thomas/Documents/flask-mega-tutorial/venv/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Thomas/Documents/flask-mega-tutorial/venv/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/Users/Thomas/Documents/flask-mega-tutorial/venv/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Thomas/Documents/flask-mega-tutorial/venv/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Thomas/Documents/flask-mega-tutorial/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/Thomas/Documents/flask-mega-tutorial/app/routes.py", line 27, in index
+    posts = current_user.followed_posts().all()
+  File "/Users/Thomas/Documents/flask-mega-tutorial/app/models.py", line 47, in followed_posts
+    followers, (followers.c.followed_id == Post.user_id)).filter(
+NameError: name 'followers' is not defined
+2018-06-03 21:36:00,041 ERROR: Exception on /index [GET] [in /Users/Thomas/Documents/flask-mega-tutorial/venv/lib/python3.6/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/Users/Thomas/Documents/flask-mega-tutorial/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Thomas/Documents/flask-mega-tutorial/venv/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Thomas/Documents/flask-mega-tutorial/venv/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Thomas/Documents/flask-mega-tutorial/venv/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/Users/Thomas/Documents/flask-mega-tutorial/venv/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Thomas/Documents/flask-mega-tutorial/venv/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Thomas/Documents/flask-mega-tutorial/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/Thomas/Documents/flask-mega-tutorial/app/routes.py", line 27, in index
+    posts = current_user.followed_posts().all()
+  File "/Users/Thomas/Documents/flask-mega-tutorial/app/models.py", line 47, in followed_posts
+    followers, (followers.c.followed_id == Post.user_id)).filter(
+NameError: name 'followers' is not defined
+2018-06-03 21:36:02,510 ERROR: Exception on /index [GET] [in /Users/Thomas/Documents/flask-mega-tutorial/venv/lib/python3.6/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/Users/Thomas/Documents/flask-mega-tutorial/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Thomas/Documents/flask-mega-tutorial/venv/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Thomas/Documents/flask-mega-tutorial/venv/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Thomas/Documents/flask-mega-tutorial/venv/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/Users/Thomas/Documents/flask-mega-tutorial/venv/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Thomas/Documents/flask-mega-tutorial/venv/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Thomas/Documents/flask-mega-tutorial/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/Thomas/Documents/flask-mega-tutorial/app/routes.py", line 27, in index
+    posts = current_user.followed_posts().all()
+  File "/Users/Thomas/Documents/flask-mega-tutorial/app/models.py", line 47, in followed_posts
+    followers, (followers.c.followed_id == Post.user_id)).filter(
+NameError: name 'followers' is not defined
+2018-06-03 21:36:40,415 INFO: Microblog startup [in /Users/Thomas/Documents/flask-mega-tutorial/app/__init__.py:28]
+2018-06-05 21:53:49,953 INFO: Microblog startup [in /Users/Thomas/Documents/flask-mega-tutorial/app/__init__.py:28]

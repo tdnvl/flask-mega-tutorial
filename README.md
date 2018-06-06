@@ -390,6 +390,18 @@ The author mentions the Post/Redirect/Get pattern:
 
 The author adds a new Explore page that acts as a global stream of posts, to help users discover and follow other users. The author uses the same `index.html` template but omits the `form` argument in the `render_template()` call. As a result, the form will not display—only the feed of posts.
 
+## Pagination of blog posts
+
+Flask-SQLAlchemy supports pagination natively with the `paginate()` query method:
+
+`>>> user.followed_posts().paginate(1, 20, False).items`
+
+The arguments are:
++ page number starting form 1
++ number of items per page
++ an error flag (`True` will return a 404, `False`, an empty list)
+
+The return value from `paginate` is a `Pagination` object.
 
 
 
