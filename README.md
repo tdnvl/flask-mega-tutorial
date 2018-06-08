@@ -408,6 +408,9 @@ The return value from `paginate` is a `Pagination` object.
 The author uses other attributes of the `Pagination` object to generate previous/next links. I like that he uses some logic to generate these URLs and passes them to the template through `render_template`.
 
 
+# Chapter 10: Email support
+
+## Flask-Mail
 
 
 
