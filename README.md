@@ -410,7 +410,25 @@ The author uses other attributes of the `Pagination` object to generate previous
 
 # Chapter 10: Email support
 
-## Flask-Mail
+## Flask-Mail and JSON Web Tokens
+
+We installed the two modules.
+
+> If you want to use an emulated email server [...] you can start in a second terminal with the following command: 
+
+`(venv) $ python -m smtpd -n -c DebuggingServer localhost:8025`
+
+> To configure for this server you will need to set two environment variables: 
+
+```
+(venv) $ export MAIL_SERVER=localhost
+(venv) $ export MAIL_PORT=8025
+```
+
+I can't make this work...
+
+
+
 
 
 
