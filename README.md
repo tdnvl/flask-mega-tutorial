@@ -425,7 +425,24 @@ We installed the two modules.
 (venv) $ export MAIL_PORT=8025
 ```
 
-I can't make this work...
+## A simple email framework
+
+### Password Reset Tokens
+
+To authenticate the user trying to change their password, we are going to use a "very popular token standard for this type of process: the JSON Web Token, or JWT."
+
+The author shows in the Shell how this works:
+
+```
+>>> import jwt
+>>> token = jwt.encode({'a': 'b'}, 'my-secret', algorithm='HS256')
+>>> token
+b'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhIjoiYiJ9.dvOo58OBDHiuSHD4uW88nfJik_sfUHq1mDi4G0'
+>>> jwt.decode(token, 'my-secret', algorithms=['HS256'])
+{'a': 'b'}
+```
+
+
 
 
 
