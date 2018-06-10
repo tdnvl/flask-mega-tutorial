@@ -442,6 +442,10 @@ b'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhIjoiYiJ9.dvOo58OBDHiuSHD4uW88nfJik_sf
 {'a': 'b'}
 ```
 
+The token in itself is not secure. The hash goes both ways and it can be decoded easily (see the [JWT debugger](https://jwt.io/#debugger-io)). The key (we'll use `SECRET_KEY`) is... key.
+
+> Since these tokens belong to users, I'm going to write the token generation and verification functions as methods in the User model
+
 
 
 
