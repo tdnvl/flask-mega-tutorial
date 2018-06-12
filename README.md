@@ -446,6 +446,18 @@ The token in itself is not secure. The hash goes both ways and it can be decoded
 
 > Since these tokens belong to users, I'm going to write the token generation and verification functions as methods in the User model
 
+### Asynchronous Emails 
+
+Running asynchronous tasks can be achieved with the `threading` or `multiprocessing` module.
+
+# Chapter 11: Facelift
+
+## Bootstrap for Flask
+
+We'll use Bootstrap through a Flask extension:
+
+`(venv) $ pip install flask-bootstrap`
+
 
 
 
