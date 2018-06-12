@@ -476,6 +476,36 @@ The author then nests the `base.html` template into a `boostrap/base.html` (so t
 
 We had to do this for all templates.
 
+# Chapter 12: Date and time
+
+We're going to be looking into timestamps for posts. We'll rely on UTC but we're going to have to convert timezones. Fun 🎉
+
+We'll use Flask-Moment, an extension written by the author and that makes it easy to use moment.js in Flask.
+
+`(venv) $ pip install flask-moment`
+
+We initialize in `__init__.py`:
+
+```
+# ...
+from flask_moment import Moment
+
+app = Flask(__name__)
+# ...
+moment = Moment(app)
+```
+
+The extension does not add the library to the pages so we're going to have to modify the base template ourselves, adding a block:
+
+```
+{% block scripts %}
+    {{ super() }}
+    {{ moment.include_moment() }}
+{% endblock %}
+```
+
+`super()` is a way to _keep what is in the parent block without overriding it_. Base extends the Bootstrap base that already has some scripts. `super()` guarantees that these scripts are kept intact.
+
 
 
 
