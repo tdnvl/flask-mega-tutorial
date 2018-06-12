@@ -458,7 +458,23 @@ We'll use Bootstrap through a Flask extension:
 
 `(venv) $ pip install flask-bootstrap`
 
+> Flask-Bootstrap needs to be initialized like most other Flask extensions.
 
+So we import and instantiate:
+
+```
+from flask_bootstrap import Bootstrap
+
+...
+
+bootstrap = Bootstrap(app)
+```
+
+The author then nests the `base.html` template into a `boostrap/base.html` (so the former extends the latter).
+
+> The block named `content` is used by Flask-Bootstrap, so I renamed my content block as `app_content`
+
+We had to do this for all templates.
 
 
 
