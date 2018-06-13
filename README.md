@@ -516,7 +516,17 @@ This is a pain. I just skipped this section. I hope that I won't have copy all t
 
 ## Using a Third-Party Translation Service 
 
-Stopped here!
+We're generating some Azure Translator Text keys and adding them as environmenrt variables and calling them in `config.py`:
+
+>As always with configuration values, I prefer to install them in environment variables and import them into the Flask configuration from there. This is particularly important with sensitive information such as keys or passwords that enable access to third-party services. You definitely do not want to write those explicitly in the code. 
+
+```
+class Config(object):
+    # ...
+    MS_TRANSLATOR_KEY = os.environ.get('MS_TRANSLATOR_KEY')
+```
+
+
 
 
 
