@@ -514,9 +514,9 @@ This is a pain. I just skipped this section. I hope that I won't have copy all t
 
 # Chapter 14: Ajax
 
-## Language Identification
+## Using a Third-Party Translation Service 
 
-
+Stopped here!
 
 
 
