@@ -506,6 +506,17 @@ The extension does not add the library to the pages so we're going to have to mo
 
 `super()` is a way to _keep what is in the parent block without overriding it_. Base extends the Bootstrap base that already has some scripts. `super()` guarantees that these scripts are kept intact.
 
+#  Chapter 13: I18n and L10n 
+
+I18n and L10n are abbreviations for internationalization and localization. We are going to use [Flask-Babel](https://pythonhosted.org/Flask-Babel/) for that.
+
+This is a pain. I just skipped this section. I hope that I won't have copy all the files to keep on moving...
+
+# Chapter 14: Ajax
+
+## Language Identification
+
+
 
 
 

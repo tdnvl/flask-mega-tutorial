@@ -1,0 +1,91 @@
+2018-06-05 21:54:04,630 ERROR: Exception on / [GET] [in /Users/Thomas/Documents/flask-mega-tutorial/venv/lib/python3.6/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/Users/Thomas/Documents/flask-mega-tutorial/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Thomas/Documents/flask-mega-tutorial/venv/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Thomas/Documents/flask-mega-tutorial/venv/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Thomas/Documents/flask-mega-tutorial/venv/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/Users/Thomas/Documents/flask-mega-tutorial/venv/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Thomas/Documents/flask-mega-tutorial/venv/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Thomas/Documents/flask-mega-tutorial/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/Thomas/Documents/flask-mega-tutorial/app/routes.py", line 29, in index
+    return render_template("index.html", title='Home', form=form, posts=posts.item)
+AttributeError: 'Pagination' object has no attribute 'item'
+2018-06-05 21:55:10,316 INFO: Microblog startup [in /Users/Thomas/Documents/flask-mega-tutorial/app/__init__.py:28]
+2018-06-07 22:06:43,046 INFO: Microblog startup [in /Users/Thomas/Documents/flask-mega-tutorial/app/__init__.py:30]
+2018-06-07 22:09:16,620 INFO: Microblog startup [in /Users/Thomas/Documents/flask-mega-tutorial/app/__init__.py:30]
+2018-06-07 22:18:22,100 INFO: Microblog startup [in /Users/Thomas/Documents/flask-mega-tutorial/app/__init__.py:30]
+2018-06-09 20:11:47,526 INFO: Microblog startup [in /Users/Thomas/Documents/flask-mega-tutorial/app/__init__.py:30]
+2018-06-09 22:57:27,709 INFO: Microblog startup [in /Users/Thomas/Documents/flask-mega-tutorial/app/__init__.py:30]
+2018-06-09 22:58:35,442 ERROR: Exception on /reset_password_request [POST] [in /Users/Thomas/Documents/flask-mega-tutorial/venv/lib/python3.6/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/Users/Thomas/Documents/flask-mega-tutorial/venv/lib/python3.6/site-packages/flask_mail.py", line 492, in send
+    message.send(connection)
+  File "/Users/Thomas/Documents/flask-mega-tutorial/venv/lib/python3.6/site-packages/flask_mail.py", line 427, in send
+    connection.send(self)
+  File "/Users/Thomas/Documents/flask-mega-tutorial/venv/lib/python3.6/site-packages/flask_mail.py", line 192, in send
+    message.rcpt_options)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/smtplib.py", line 852, in sendmail
+    self.ehlo_or_helo_if_needed()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/smtplib.py", line 600, in ehlo_or_helo_if_needed
+    if not (200 <= self.ehlo()[0] <= 299):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/smtplib.py", line 440, in ehlo
+    self.putcmd(self.ehlo_msg, name or self.local_hostname)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/smtplib.py", line 367, in putcmd
+    self.send(str)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/smtplib.py", line 359, in send
+    raise SMTPServerDisconnected('please run connect() first')
+smtplib.SMTPServerDisconnected: please run connect() first
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/Thomas/Documents/flask-mega-tutorial/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Thomas/Documents/flask-mega-tutorial/venv/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Thomas/Documents/flask-mega-tutorial/venv/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Thomas/Documents/flask-mega-tutorial/venv/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/Users/Thomas/Documents/flask-mega-tutorial/venv/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Thomas/Documents/flask-mega-tutorial/venv/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Thomas/Documents/flask-mega-tutorial/app/routes.py", line 166, in reset_password_request
+    send_password_reset_email(user)
+  File "/Users/Thomas/Documents/flask-mega-tutorial/app/email.py", line 19, in send_password_reset_email
+    user=user, token=token))
+  File "/Users/Thomas/Documents/flask-mega-tutorial/app/email.py", line 9, in send_email
+    mail.send(msg)
+  File "/Users/Thomas/Documents/flask-mega-tutorial/venv/lib/python3.6/site-packages/flask_mail.py", line 492, in send
+    message.send(connection)
+  File "/Users/Thomas/Documents/flask-mega-tutorial/venv/lib/python3.6/site-packages/flask_mail.py", line 152, in __exit__
+    self.host.quit()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/smtplib.py", line 983, in quit
+    res = self.docmd("quit")
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/smtplib.py", line 420, in docmd
+    self.putcmd(cmd, args)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/smtplib.py", line 367, in putcmd
+    self.send(str)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/smtplib.py", line 359, in send
+    raise SMTPServerDisconnected('please run connect() first')
+smtplib.SMTPServerDisconnected: please run connect() first
+2018-06-11 21:58:17,266 INFO: Microblog startup [in /Users/Thomas/Documents/flask-mega-tutorial/app/__init__.py:32]
+2018-06-11 22:20:49,712 INFO: Microblog startup [in /Users/Thomas/Documents/flask-mega-tutorial/app/__init__.py:34]
+2018-06-12 22:06:12,912 INFO: Microblog startup [in /Users/Thomas/Documents/flask-mega-tutorial/app/__init__.py:34]
+2018-06-12 22:06:52,807 INFO: Microblog startup [in /Users/Thomas/Documents/flask-mega-tutorial/app/__init__.py:34]
+2018-06-12 22:08:23,452 INFO: Microblog startup [in /Users/Thomas/Documents/flask-mega-tutorial/app/__init__.py:34]
+2018-06-12 22:08:55,438 INFO: Microblog startup [in /Users/Thomas/Documents/flask-mega-tutorial/app/__init__.py:34]
+2018-06-12 22:09:28,106 INFO: Microblog startup [in /Users/Thomas/Documents/flask-mega-tutorial/app/__init__.py:34]
+2018-06-12 22:09:41,862 INFO: Microblog startup [in /Users/Thomas/Documents/flask-mega-tutorial/app/__init__.py:34]
+2018-06-12 22:09:47,483 INFO: Microblog startup [in /Users/Thomas/Documents/flask-mega-tutorial/app/__init__.py:34]
+2018-06-12 22:09:53,892 INFO: Microblog startup [in /Users/Thomas/Documents/flask-mega-tutorial/app/__init__.py:34]
+2018-06-12 22:13:48,381 INFO: Microblog startup [in /Users/Thomas/Documents/flask-mega-tutorial/app/__init__.py:34]
+2018-06-12 22:15:54,335 INFO: Microblog startup [in /Users/Thomas/Documents/flask-mega-tutorial/app/__init__.py:34]
