@@ -38,6 +38,14 @@ Flask needs to be told how to import it, by setting the FLASK_APP environment va
 
 `export FLASK_APP=microblog.py`
 
+The python-dotenv package lets us register environment variables:
+
+`pip install python-dotenv`
+
+Create an `.flaskenv` file and declare the FLASK_APP environment variable:
+
+`FLASK_APP=microblog.py`
+
 To start the app, execute `flask run`. Make sure the be in the virtual environment; start it with `source venv/bin/activate`.
 
 
