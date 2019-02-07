@@ -18,13 +18,13 @@ Install Flask:
 
 `pip install flask`
 
-The application will exist in a package. In Python, a sub-directory that includes a __init__.py file is considered a package, and can be imported.
+The application will exist in a package. In Python, a sub-directory that includes a `__init__.py` file is considered a package, and can be imported.
 
 Create app folder:
 
 `mkdir app`
 
-Create __init__.py file:
+Create `__init__.py` file:
 
 ```
 from flask import Flask
