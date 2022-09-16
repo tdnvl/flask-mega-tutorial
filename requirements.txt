@@ -20,7 +20,7 @@ idna==2.7
 itsdangerous==0.24
 Jinja2==2.10
 jwt==0.5.3
-Mako==1.0.7
+Mako==1.2.2
 MarkupSafe==1.0
 pycparser==2.18
 python-dateutil==2.7.3
